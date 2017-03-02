@@ -13,6 +13,8 @@
 		307C6A201E67EC4D00F44335 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307C6A1F1E67EC4D00F44335 /* Assets.xcassets */; };
 		307C6A231E67EC4D00F44335 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307C6A211E67EC4D00F44335 /* LaunchScreen.storyboard */; };
 		307C6A2B1E68012100F44335 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307C6A2A1E68012100F44335 /* CustomAnnotation.swift */; };
+		307C6A301E6806D000F44335 /* keangnam.png in Resources */ = {isa = PBXBuildFile; fileRef = 307C6A2F1E6806D000F44335 /* keangnam.png */; };
+		307C6A341E680D4600F44335 /* framgia.png in Resources */ = {isa = PBXBuildFile; fileRef = 307C6A331E680D4600F44335 /* framgia.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		307C6A221E67EC4D00F44335 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		307C6A241E67EC4D00F44335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		307C6A2A1E68012100F44335 /* CustomAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		307C6A2F1E6806D000F44335 /* keangnam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = keangnam.png; path = Resources/keangnam.png; sourceTree = "<group>"; };
+		307C6A331E680D4600F44335 /* framgia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = framgia.png; path = Resources/framgia.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		307C6A171E67EC4D00F44335 /* LearnMapKit */ = {
 			isa = PBXGroup;
 			children = (
+				307C6A2C1E68069F00F44335 /* Resources */,
 				307C6A181E67EC4D00F44335 /* AppDelegate.swift */,
 				307C6A1A1E67EC4D00F44335 /* ViewController.swift */,
 				307C6A1C1E67EC4D00F44335 /* Main.storyboard */,
@@ -65,6 +70,15 @@
 				307C6A2A1E68012100F44335 /* CustomAnnotation.swift */,
 			);
 			path = LearnMapKit;
+			sourceTree = "<group>";
+		};
+		307C6A2C1E68069F00F44335 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				307C6A331E680D4600F44335 /* framgia.png */,
+				307C6A2F1E6806D000F44335 /* keangnam.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,7 +142,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				307C6A231E67EC4D00F44335 /* LaunchScreen.storyboard in Resources */,
+				307C6A301E6806D000F44335 /* keangnam.png in Resources */,
 				307C6A201E67EC4D00F44335 /* Assets.xcassets in Resources */,
+				307C6A341E680D4600F44335 /* framgia.png in Resources */,
 				307C6A1E1E67EC4D00F44335 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
