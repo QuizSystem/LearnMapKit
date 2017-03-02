@@ -12,6 +12,7 @@
 		307C6A1E1E67EC4D00F44335 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307C6A1C1E67EC4D00F44335 /* Main.storyboard */; };
 		307C6A201E67EC4D00F44335 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 307C6A1F1E67EC4D00F44335 /* Assets.xcassets */; };
 		307C6A231E67EC4D00F44335 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 307C6A211E67EC4D00F44335 /* LaunchScreen.storyboard */; };
+		307C6A2B1E68012100F44335 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307C6A2A1E68012100F44335 /* CustomAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		307C6A1F1E67EC4D00F44335 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		307C6A221E67EC4D00F44335 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		307C6A241E67EC4D00F44335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		307C6A2A1E68012100F44335 /* CustomAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				307C6A1F1E67EC4D00F44335 /* Assets.xcassets */,
 				307C6A211E67EC4D00F44335 /* LaunchScreen.storyboard */,
 				307C6A241E67EC4D00F44335 /* Info.plist */,
+				307C6A2A1E68012100F44335 /* CustomAnnotation.swift */,
 			);
 			path = LearnMapKit;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			files = (
 				307C6A1B1E67EC4D00F44335 /* ViewController.swift in Sources */,
 				307C6A191E67EC4D00F44335 /* AppDelegate.swift in Sources */,
+				307C6A2B1E68012100F44335 /* CustomAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +304,7 @@
 				307C6A291E67EC4D00F44335 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
