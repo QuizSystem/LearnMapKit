@@ -34,8 +34,34 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         mapView.addAnnotations(annotationArray)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    func drawLineTwoLocation(sourceLocation: CLLocationCoordinate2D, destinationLocation: CLLocationCoordinate2D) {
+        // Step 1
+        let sourcePlacemark = MKPlacemark(coordinate: sourceLocation, addressDictionary: nil)
+        let destionationPlacemark = MKPlacemark(coordinate: destinationLocation, addressDictionary: nil)
+        
+        // Step 2
+        let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
+        let destinationMapItem = MKMapItem(placemark: destionationPlacemark)
+        
+        // Step 3
+        let directRequest = MKDirectionsRequest()
+        directRequest.source = sourceMapItem
+        directRequest.destination = destinationMapItem
+        directRequest.transportType = .automobile
+        
+        // Step 4
+        let directions = MKDirections(request: directRequest)
+        directions.calculate { (reponse: MKDirectionsResponse?, error: Error?) in
+            if error == nil {
+                if let route = reponse?.routes.first {
+                    self.mapView.add(route.polyline, level: .aboveRoads)
+                    let rect = route.polyline.boundingMapRect
+                    self.mapView.setVisibleMapRect(rect, edgePadding: UIEdgeInsetsMake(40, 40, 20, 20), animated: true)
+                }
+            } else {
+                print("Mao", error?.localizedDescription)
+            }
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -50,15 +76,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             let image = UIImage(named: "framgia")!
             let newImage = imageWithImage(image: image, scaledToSize: CGSize(width: 20, height: 20))
             let sourceAnnotation = CustomAnnotation(title: "Framgia", subtitle: "13F Keang Nam", coordinate: CLLocationCoordinate2D(latitude: currentLocation.latitude, longitude: currentLocation.longitude), image: newImage)
-            self.annotationArray.append(sourceAnnotation)
+            annotationArray.append(sourceAnnotation)
+            
+            //20.980878, 105.800978
+            let destinationLocation = CLLocationCoordinate2D(latitude: 20.980878, longitude: 105.800978)
+            let destinationAnnotation = CustomAnnotation(title: "Framgia", subtitle: "13F Keang Nam", coordinate: CLLocationCoordinate2D(latitude: destinationLocation.latitude, longitude: destinationLocation.longitude), image: newImage)
+            annotationArray.append(destinationAnnotation)
+            
+            drawLineTwoLocation(sourceLocation: currentLocation, destinationLocation: destinationLocation)
         }
         
-        //20.980878, 105.800978
-        let image = UIImage(named: "framgia")!
-        let newImage = imageWithImage(image: image, scaledToSize: CGSize(width: 20, height: 20))
-        let destinationLocation = CLLocationCoordinate2D(latitude: 20.980878, longitude: 105.800978)
-        let destinationAnnotation = CustomAnnotation(title: "Framgia", subtitle: "13F Keang Nam", coordinate: CLLocationCoordinate2D(latitude: destinationLocation.latitude, longitude: destinationLocation.longitude), image: newImage)
-        self.annotationArray.append(destinationAnnotation)
+
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -86,6 +114,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         UIGraphicsEndImageContext()
         return newImage
     }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        renderer.strokeColor = UIColor.blue
+        renderer.lineWidth = 3.0
+        return renderer
+    }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 }
 
