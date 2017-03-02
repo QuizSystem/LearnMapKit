@@ -21,6 +21,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         mapView.showsUserLocation = true
+        
+        if let currentLocation = locationManager.location?.coordinate {
+            let annotation = CustomAnnotation(title: "KeangNam", subtitle: "Pham Hung", coordinate: CLLocationCoordinate2D(latitude: currentLocation.latitude, longitude: currentLocation.longitude))
+            mapView.addAnnotation(annotation)
+        }
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
